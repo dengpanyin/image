@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Logs
+*.log
+
+# Model outputs and checkpoints
+outputs/
+runs/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+
+# Downloaded / generated data
+data/raw/
+data/images/
+data/splits/train.csv
+data/splits/val.csv
+
+# Keep examples and placeholders
+!data/splits/train.csv.example
+
+# Hugging Face / torch hub caches
+.cache/
+hub/
+
+# OS
+Thumbs.db

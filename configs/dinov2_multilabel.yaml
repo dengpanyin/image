@@ -1,0 +1,34 @@
+# DINOv2 multi-label fine-tuning (V1: single-frame, no TCN)
+
+model:
+  name: dinov2_vitb14
+  num_classes: null  # inferred from labels
+  unfreeze_last_n_blocks: 4
+
+labels:
+  - fire_smoke
+  - lane_blocked
+  - debris
+  - door_open_abnormal
+  - wet_floor
+
+data:
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  image_root: data/images
+  img_size: 448
+
+train:
+  stage1_epochs: 5
+  stage2_epochs: 20
+  batch_size: 16
+  num_workers: 4
+  head_lr: 1.0e-4
+  backbone_lr: 5.0e-6
+  weight_decay: 0.05
+  pos_weight_cap: 10.0
+  early_stop_patience: 5
+  output_dir: outputs/dinov2_multilabel
+
+inference:
+  threshold: 0.5

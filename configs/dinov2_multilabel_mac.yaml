@@ -1,0 +1,36 @@
+# MacBook Air friendly config for smoke testing.
+# simple_cnn: no download, verifies the training pipeline offline.
+# dinov2_vits14: switch back when GitHub/torch.hub is reachable.
+
+model:
+  name: simple_cnn
+  num_classes: null
+  unfreeze_last_n_blocks: 2
+
+labels:
+  - fire_smoke
+  - lane_blocked
+  - debris
+  - door_open_abnormal
+  - wet_floor
+
+data:
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  image_root: data/images
+  img_size: 224
+
+train:
+  stage1_epochs: 2
+  stage2_epochs: 3
+  batch_size: 2
+  num_workers: 0
+  head_lr: 1.0e-4
+  backbone_lr: 5.0e-6
+  weight_decay: 0.05
+  pos_weight_cap: 10.0
+  early_stop_patience: 5
+  output_dir: outputs/dinov2_multilabel_mac
+
+inference:
+  threshold: 0.5

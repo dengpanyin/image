@@ -1,0 +1,4 @@
+image_path,fire_smoke,lane_blocked,debris,door_open_abnormal,wet_floor
+cam01/20260101_120000.jpg,0,1,0,0,0
+cam01/20260101_120030.jpg,0,0,1,0,0
+cam02/20260101_130000.jpg,1,0,0,0,0
